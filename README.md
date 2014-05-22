@@ -13,7 +13,7 @@ License: [Attribution-ShareAlike 4.0 International](http://creativecommons.org/l
 [View demo](http://www.thepetedesign.com/demos/shuffle-images_demo.html)
 
 ## Compatibility
-Modern browsers such as Chrome, Firefox, and Safari on desktop have been tested. Not tested on IE. Since the nature of this plugin require mouse input, it may not work as expected on mobile.
+Modern browsers such as Chrome, Firefox, and Safari on desktop have been tested. Not tested on IE. Since the nature of this plugin requires mouse input, it may not work as expected on mobile.
 
 ## Basic Usage
 To use this plugin, simply include the latest jQuery library (preferably version 2.0.0 or higher) together with `jquery.shuffle-images.js` into your document's `<head>` follow by an HTML markup as follows:
