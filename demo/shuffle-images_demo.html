@@ -1,0 +1,466 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Shuffle Images by Pete R. | The Pete Design</title>
+	<meta name="title" content="jQuery Shuffle Images by Pete R. | The Pete Design" />
+	<meta name="description" content="Simplest Way to shuffle through images in a Creative Way with jQuery Shuffle Images plugin by Pete Rojwongsuriya" />
+	<link rel="image_src" href="/images/shuffle-images_image.jpg" />
+
+	<meta content="http://www.thepetedesign.com/demos/shuffle-images.html" property="og:url" />
+	<meta content="http://www.thepetedesign.com/images/shuffle-images_image.jpg" property="og:image" />
+	<link rel="shortcut icon" id="favicon" href="favicon.png"> 
+	<meta name="author" content="Pete R.">
+	<link rel="canonical" href="http://www.thepetedesign.com/demos/shuffle-images_demo.html" />
+  <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico:400' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.shuffle-images.js"></script>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #fff;
+      padding: 0;
+      text-align: center;
+      font-family: 'Open Sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizelegibility;
+    }
+    
+    a {
+      color: black;
+    }
+    
+    .header {
+      padding: 30px 0 0;
+      float: left;
+      width: 100%;
+      background: white;
+    }
+    
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    
+    h1, h2 {
+      width: 100%;
+      float: left;
+    }
+    h1 {
+      margin-top: 100px;
+      color: #999;
+      margin-bottom: 5px;
+      font-size: 70px;
+      font-weight: 100;
+    }
+    h2 {
+      padding: 00px 20px 30px 20px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      letter-spacing: 0px;
+      color: #888;
+      font-size: 20px;
+      line-height: 160%;
+      font-weight: 100;
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    
+    
+    .pointer {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      right: -40px;
+    }
+    .pointer2 {
+      color: #00B0FF;
+      font-family: 'Pacifico';
+      font-size: 24px;
+      margin-top: 15px;
+      position: absolute;
+      top: 130px;
+      left: -40px;
+    }
+    pre {
+      margin: 80px auto;
+    }
+    pre code {
+      padding: 35px;
+      border-radius: 5px;
+      font-size: 15px;
+      background: rgba(0,0,0,0.1);
+      border: rgba(0,0,0,0.05) 5px solid;
+      max-width: 500px;
+    }
+
+
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .main h1 {
+      padding:20px 50px 10px;
+      float: left;
+      width: 100%;
+      font-size: 60px;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      font-weight: 100;
+      margin: 0;
+      padding-top: 25px;
+      font-family: 'Open Sans';
+      letter-spacing: -1px;
+      text-transform: capitalize;
+    }
+   
+    .main h1.demo1 {
+      background: #1ABC9C;
+    }
+    
+    .reload.bell {
+      font-size: 12px;
+      padding: 20px;
+      width: 45px;
+      text-align: center;
+      height: 47px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+    }
+    
+    .reload.bell #notification {
+      font-size: 25px;
+      line-height: 140%;
+    }
+    
+    .reload, .btn{
+      display: inline-block;
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      display: inline-block;
+      line-height: 100%;
+      padding: 0.7em;
+      text-decoration: none;
+      width: 100px;
+      line-height: 140%;
+      font-size: 17px;
+      font-family: Open Sans;
+      font-weight: bold;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .reload:hover{
+      background: #317af2;
+    }
+    .btn {
+      width: 200px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      background-color: #4D90FE;
+      background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+      background-image: linear-gradient(top,#4d90fe,#4787ed);
+      border: 1px solid #3079ED;
+      color: #FFF;
+    }
+    .clear {
+      width: auto;
+    }
+    .btn:hover, .btn:hover {
+      background: #317af2;
+    }
+    .btns {
+      width: 410px;
+      margin: 50px auto;
+    }
+    .credit {
+      text-align: center;
+      color: #888;
+      padding: 10px 10px;
+      margin: 0 0 0 0;
+      float: left;
+      width: 100%;
+    }
+    .credit a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+    
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      display: block;
+      padding: 7px;
+      width: 100%;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      background:#f5f5f5;
+      font-weight: bold;
+      font-size: 13px;
+      color: #888;
+      -webkit-transition: all 200ms ease-out;
+      -moz-transition: all 200ms ease-out;
+      -o-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+    }
+    .back:hover {
+      background: #eee;
+    }
+  
+    .container {
+      width: 980px;
+      margin: 0 auto;
+    }
+    
+    .page-container {
+      float: left;
+      width: 100%;
+      margin: 0 auto 300px;
+      position: relative;
+    }
+    
+    .header {
+      overflow: hidden;
+      clear: both;
+    }
+    
+    .bg {
+      position: absolute;
+      min-height: 100% !important;
+      width: 100%;
+      z-index: 0;
+    }
+    
+    .ibg-bg {
+      position: absolute;
+    }
+    #btns {
+      text-align: center;
+      margin: 50px auto;
+      height: 50px;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+    }
+    
+    
+    .main {
+      position: relative;
+    }
+    
+    .shuffle-me {
+      width: 25%;
+      height: 150px;
+      margin: 2%;
+      display: block;
+      position: relative;
+      float: left;
+      width: 26%;
+      height: 209px;
+    }
+
+    .info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.35);
+      padding: 20px;
+      text-align: center;
+      display: block;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .info h1 {
+      font-weight: bold;
+      color: white;
+      font-size: 20px;
+      margin: 55px 0 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0;
+      
+    }
+
+    .info h1 a {
+     color: #fff; 
+    }
+    .info h2 {
+      margin-top: 0;
+      color: white;
+      font-size: 14px;
+      font-family: georgia;
+      font-style: italic;
+    }
+
+    .shuffle-group {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .shuffle-group .shuffle-me {
+      width: 31.9%;
+      float: left;
+      margin: 5px;
+    }
+
+    .shuffle-group .shuffle-me:first-child {
+      width: 66%;
+      float: left;
+      height: 431px;
+    }
+    .shuffle-group .shuffle-me:first-child h1 {
+      margin-top: 190px;
+      font-size: 30px;
+    }
+
+    
+	</style>
+	<script>
+	  $(document).ready(function(){
+       $(".shuffle-me").shuffleImages({
+         target: ".images > img"
+       });
+		});
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+	    <div class="header">
+        <h1>jQuery Shuffle Images</h1>
+        <h2>Simplest Way to shuffle through images in a Creative Way with jQuery Shuffle Images</h2>
+        <p class="credit">Created by <a href="http://www.thepetedesign.com">Pete R.</a>, Founder of <a href="http://www.travelistly.com" target="_blank">Travelistly</a> and <a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></p>
+        <div class="btns" id="btns">
+  	      <a class="reload btn" href="https://github.com/peachananr/shuffle-images">Download on Github</a>
+  	    </div>
+  	  </div>
+  	   
+    	<div class="container"> 
+    	  
+    	  <div class="shuffle-group">
+    	    <div data-si-mousemove-trigger="100" class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/86313792387/africa-part-1-exploring-soweto-on-a-bike-solo" class="info" target="_blank"><h1>Soweto on a Bike</h1><h2>Soloing Africa Part 1</h2></a>
+    	      <div class="images">
+  	          <img src="images/1.jpg">
+  	          <img src="images/2.jpg">
+  	          <img src="images/3.jpg">
+  	        </div>
+  	      </div>
+  	      <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/67843428144/trekking-the-himalayas-annapurna-base-camp-in-7" class="info" target="_blank"><h1>The Himalaya</h1><h2>Annapurna Base Camp</h2></a>
+    	      <div class="images">
+  	          <img src="images/4.jpg">
+  	          <img src="images/5.jpg">
+  	          <img src="images/6.jpg">
+  	        </div>
+  	      </div>
+  	      <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/59584109323/incredible-india-a-solo-travelers-journal-3" class="info" target="_blank"><h1>Incredible India</h1><h2>The Taj Mahal and Jaipur</h2></a>
+    	      <div class="images">
+  	          <img src="images/7.jpg">
+  	          <img src="images/8.jpg">
+  	          <img src="images/9.jpg">
+  	        </div>
+  	      </div>
+  	    </div>
+        
+        <div class="shuffle-group">
+          <div data-si-mousemove-trigger="100" class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/59584109323/incredible-india-a-solo-travelers-journal-3" class="info" target="_blank"><h1>Incredible India</h1><h2>The Taj Mahal and Jaipur</h2></a>
+    	      <div class="images">
+  	          <img src="images/7.jpg">
+  	          <img src="images/8.jpg">
+  	          <img src="images/9.jpg">
+  	        </div>
+  	      </div>
+    	    <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/86313792387/africa-part-1-exploring-soweto-on-a-bike-solo" class="info" target="_blank"><h1>Soweto on a Bike</h1><h2>Soloing Africa Part 1</h2></a>
+    	      <div class="images">
+  	          <img src="images/1.jpg">
+  	          <img src="images/2.jpg">
+  	          <img src="images/3.jpg">
+  	        </div>
+  	      </div>
+  	      <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/67843428144/trekking-the-himalayas-annapurna-base-camp-in-7" class="info" target="_blank"><h1>The Himalaya</h1><h2>Annapurna Base Camp</h2></a>
+    	      <div class="images">
+  	          <img src="images/4.jpg">
+  	          <img src="images/5.jpg">
+  	          <img src="images/6.jpg">
+  	        </div>
+  	      </div>
+  	    </div>
+  	    
+  	    <div class="shuffle-group">
+  	      <div data-si-mousemove-trigger="100" class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/67843428144/trekking-the-himalayas-annapurna-base-camp-in-7" class="info" target="_blank"><h1>The Himalaya</h1><h2>Annapurna Base Camp</h2></a>
+    	      <div class="images">
+  	          <img src="images/6.jpg">
+  	          <img src="images/4.jpg">
+  	          <img src="images/5.jpg">
+  	        </div>
+  	      </div>
+          <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/59584109323/incredible-india-a-solo-travelers-journal-3" class="info" target="_blank"><h1>Incredible India</h1><h2>The Taj Mahal and Jaipur</h2></a>
+    	      <div class="images">
+  	          <img src="images/9.jpg">
+  	          <img src="images/7.jpg">
+  	          <img src="images/8.jpg">
+  	        </div>
+  	      </div>
+    	    <div class="shuffle-me">
+    	      <a href="http://blog.bucketlistly.com/post/86313792387/africa-part-1-exploring-soweto-on-a-bike-solo" class="info" target="_blank"><h1>Soweto on a Bike</h1><h2>Soloing Africa Part 1</h2></a>
+    	      <div class="images">
+  	          <img src="images/3.jpg">
+  	          <img src="images/1.jpg">
+  	          <img src="images/2.jpg">
+  	        </div>
+  	      </div>
+  	    </div>
+        
+      </div>
+    </div>
+    <a class="back" href="http://www.thepetedesign.com/#plugins">Back to The Pete Design</a>
+    <a href="https://github.com/peachananr/shuffle-images"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  </div>
+  
+</body>
+</html>
