@@ -6,11 +6,9 @@ Created by [Pete R.](http://www.thepetedesign.com), Founder of [Travelistly](htt
 
 License: [Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/deed.en_US)
 
-[![Shuffle Images](http://www.thepetedesign.com/images/shuffle-images_image.jpg "Shuffle Images")](http://www.thepetedesign.com/demos/shuffle-images_demo.html)
-
 
 ## Demo
-[View demo](http://www.thepetedesign.com/demos/shuffle-images_demo.html)
+[View demo](http://peachananr.github.io/shuffle-images/demo/shuffle-images_demo.html)
 
 ## Compatibility
 Modern browsers such as Chrome, Firefox, and Safari on desktop have been tested. Not tested on IE. Since the nature of this plugin requires mouse input, it may not work as expected on mobile.
