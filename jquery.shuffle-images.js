@@ -57,8 +57,8 @@
 
               var active = el.find("img.active");
 
-              if (active.next().length > 0) {
-                active.next().addClass("active").show();
+              if (active.next('img').length > 0) {
+                active.next('img').addClass("active").show();
                 active.removeClass("active").hide();
 
               } else {
@@ -77,8 +77,8 @@
             triggerTime = setInterval(function(){
               var active = el.find("img.active");
 
-              if (active.next().length > 0) {
-                active.next().addClass("active").show();
+              if (active.next('img').length > 0) {
+                active.next('img').addClass("active").show();
                 active.removeClass("active").hide();
 
               } else {
@@ -100,8 +100,8 @@
 
               var active = el.find("img.active");
 
-              if (active.next().length > 0) {
-                active.next().addClass("active").show();
+              if (active.next('img').length > 0) {
+                active.next('img').addClass("active").show();
                 active.removeClass("active").hide();
 
               } else {
@@ -123,8 +123,8 @@
       
               var active = el.find("img.active");
       
-              if (active.next().length > 0) {
-                active.next().addClass("active").show();
+              if (active.next('img').length > 0) {
+                active.next('img').addClass("active").show();
                 active.removeClass("active").hide();
       
               } else {
